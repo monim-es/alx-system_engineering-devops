@@ -1,1 +1,38 @@
-https://imgur.com/DQ6JN2Z
+https://imgur.com/a/LV8oAe3
+
+##  Secured and Monitored Web Infrastructure
+
+This setup builds on the previous one by making it more secure and reliable.
+
+---
+
+### 🔒 What's New?
+
+- **Firewalls** on all 3 servers to block unwanted traffic.
+- **SSL Certificate** so the site runs on HTTPS (encrypted and secure).
+- **Monitoring Agents** on each server to track performance and spot issues.
+
+---
+
+### 🧠 Why These Changes?
+
+- **Firewalls**: Only allow specific ports (e.g. 80, 443, 3306). Block everything else.
+- **HTTPS**: Encrypts data between users and the website. Safer for everyone.
+- **Monitoring**: Helps us watch server health and traffic. Useful for alerts and debugging.
+
+---
+
+### ⚠️ Known Problems
+
+- **SSL ends at the load balancer**: Internal traffic isn’t encrypted. Could be risky.
+- **Only one MySQL server can write**: If it fails, no data updates.
+- **All servers doing everything**: Not scalable. Better to separate roles.
+
+---
+
+### 📁 Project Info
+
+**Repo:** `alx-system_engineering-devops`  
+**Directory:** `0x09-web_infrastructure_design`  
+**File:** `2-secured_and_monitored_web_infrastructure`
+
