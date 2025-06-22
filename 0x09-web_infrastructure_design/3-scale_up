@@ -1,1 +1,54 @@
-https://imgur.com/S7sazgp
+https://imgur.com/a/kcPSmbl
+
+
+### 🧱 What's in the New Setup?
+
+#### ✅ Added Components:
+- **1 new server** – to support component separation and scaling.
+- **1 additional load balancer (HAProxy)** – clustered with the first one for high availability.
+- **Split components**:
+  - **Web Server** (Nginx) on its own machine.
+  - **Application Server** on a separate machine.
+  - **Database Server** (MySQL) running independently.
+
+---
+
+### 🧠 Why These Changes?
+
+#### ➕ Extra Server
+- We’re scaling up — more traffic, more load — so an extra server helps distribute the work.
+- It gives flexibility to isolate roles (web, app, DB) on separate machines.
+
+#### 🔁 Load-Balancer Cluster (HAProxy)
+- Two load balancers working together (Active-Passive or Active-Active).
+- If one fails, the other continues serving users — **no downtime**.
+- Essential for **high availability** and **redundancy**.
+
+#### 🧩 Splitting Components
+- Having web server, application server, and database on **different servers** makes things more efficient and easier to manage:
+  - Each server does **one job well** (separation of concerns).
+  - Better performance, scaling, and monitoring.
+  - If one part has issues (e.g. database crash), the others keep running.
+
+---
+
+### 📘 Quick Recap: Web Server vs Application Server
+
+- **Web Server (Nginx):**  
+  Handles browser requests (HTTP/HTTPS), serves static files (HTML, images), and forwards dynamic requests to the app server.
+
+- **Application Server:**  
+  Processes logic (like user logins, form handling), talks to the database, and returns results via the web server.
+
+---
+
+### ✅ Summary
+
+| Component              | Role                                              |
+|------------------------|---------------------------------------------------|
+| Web Server (Nginx)     | Handles client requests, serves static content    |
+| App Server             | Runs backend code and business logic              |
+| DB Server (MySQL)      | Stores and retrieves persistent data              |
+| Load Balancer Cluster  | Distributes traffic + ensures high availability   |
+| Extra Server           | Supports separation, load handling, flexibility   |
+
