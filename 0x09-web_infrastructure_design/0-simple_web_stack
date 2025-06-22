@@ -1,1 +1,31 @@
-https://imgur.com/zm6aQ2A
+# https://imgur.coma/diagram-u7xRGhs
+
+https://imgur.com/JIZtZ1A
+
+
+
+### 3. Server Side Components — Explained Simply
+
+What is a Server  
+A server is a physical or virtual computer that hosts your website and provides services to users.
+
+What does the Domain Name do  
+The domain name (e.g., `foobar.com`) is a human-friendly address that points to the server’s IP via DNS.
+
+What type of DNS record is `www`  
+It is an A record, mapping `www.foobar.com` to the server IP address (e.g., `8.8.8.8`).
+
+What is the Web Server (Nginx)  
+Nginx is the software that handles incoming browser requests. It serves static files directly and forwards dynamic requests to the application server.
+
+What is the Application Server  
+The application server runs your website’s code (PHP, Python, etc.) to generate dynamic content based on user input or data.
+
+What is the Codebase  
+The codebase is the collection of source files and scripts that define your website’s logic and behavior.
+
+What is the Database (MySQL)  
+MySQL stores all your data (like users, posts) and responds to queries from the application server.
+
+How does the server communicate with the user’s browser  
+They use TCPIP over the HTTP or HTTPS protocol to exchange information and deliver web pages.
