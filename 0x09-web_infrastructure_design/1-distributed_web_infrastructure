@@ -1,1 +1,54 @@
-https://imgur.com/VrfO6HI
+https://imgur.com/a/aIOUTO6
+
+
+## 💡 Explanation – Distributed Web Infrastructure (Whiteboarding Notes)
+
+### 1️⃣ Why Add More Servers?
+A single server setup is risky — it can’t handle much traffic, and if it goes down, your whole website goes offline (this is called a Single Point of Failure or SPOF).
+
+By adding more servers, we can spread the traffic between them. This not only makes the website faster under load but also more reliable.
+
+---
+
+### 2️⃣ What Does the Load Balancer (HAProxy) Do?
+Think of the load balancer as a traffic controller. It sits in front of your servers and distributes incoming user requests between them.
+
+This way, no single server gets overwhelmed — traffic is shared, making everything smoother and faster.
+
+---
+
+### 3️⃣ How Does the Load Balancer Decide Where to Send Traffic?
+It can use different algorithms:
+
+- **Round Robin:** Like taking turns — each server gets the next request in order.
+- **Least Connections:** Sends new requests to the server that has the fewest active connections at the moment.
+
+This helps balance the load smartly based on the current demand.
+
+---
+
+### 4️⃣ Active-Active vs Active-Passive Load Balancing
+- **Active-Active:** All servers are working at the same time, sharing the traffic. This is great for performance and high availability.
+- **Active-Passive:** One server handles all traffic; the other just waits in the background and only steps in if the main one fails.
+
+For our setup, we use **Active-Active** to keep everything running efficiently.
+
+---
+
+### 5️⃣ How the Database Cluster Works (Primary-Replica)
+We split the database into:
+
+- **Primary (Master):** Handles all data changes — inserts, updates, deletes.
+- **Replica (Slave):** A read-only copy of the Primary. It stays synced by copying data from the Primary.
+
+This setup improves speed (especially for read-heavy apps) and adds a layer of redundancy.
+
+---
+
+### 6️⃣ Primary vs Replica – What’s the Difference?
+- The application sends **write operations** (like saving or editing data) to the **Primary**.
+- It sends **read operations** (like displaying data) to the **Replica**, helping to reduce the load on the Primary.
+
+This setup makes your database more scalable and reliable.
+
+---
