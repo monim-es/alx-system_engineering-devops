@@ -1,11 +1,17 @@
-#!/bin/bash
+#!/usr/bin/env bash
+# Install nginx web server
 
-# Install nginx if not installed
-apt-get update -y
-apt-get install nginx -y
+# Update the package list on the system
+sudo apt -y update
 
-# Replace default page with "Hello World!"
-echo "Hello World!" > /var/www/html/index.nginx-debian.html
+# Install nginx
+sudo apt -y install nginx
 
-# Start nginx using service command (not systemctl)
-service nginx start
+# Create a custom HTML file with "Hello World!" for default website
+sudo sh -c 'echo "Hello World!" > /var/www/html/index.nginx-debian.html'
+
+# Start automatically nginxt at boot
+sudo systemctl enable nginx
+
+# Start nginx service
+sudo service nginx start
